@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.hr_rfid</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="25"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="RFID System" id="hr_rfid" string="RFID System" name="hr_rfid"
+                         groups="hr_rfid.hr_rfid_group_manager">
+
+                        <block title="RFID System Settings" id="hr_rfid_general">
+                            <setting id="s_event_lifetime" string="RFID Events life"
+                                     help="Define how long the Events in the system
+                                            will live in DAYS! After this period of days, the system will delete old
+                                            events.">
+                                <field name="event_lifetime"/>
+                            </setting>
+                            <setting id="s_save_new_webstacks" string="Save new Webstacks"
+                                     help="Permit automatic adding modules from
+                                            communication. This feature do not support Multi Company. New Modules are
+                                            added to first company!">
+                                <field name="save_new_webstacks"/>
+                            </setting>
+                            <setting id="s_save_webstack_communications" string="Save Webstack Communications" groups="base.group_no_one"
+                                     help="Log all JSON data from communication to
+                                            events.">
+                                <field name="save_webstack_communications"/>
+                            </setting>
+                        </block>
+
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_hr_rfid_configuration" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="res_config_settings_view_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'hr_rfid'}</field>
+        </record>
+
+    </data>
+</odoo>
