@@ -44,7 +44,7 @@ class PurchaseOrder(models.Model):
 
     digital_sign = fields.Binary(string='Signature', help="Binary field to "
                                                           "store digital "
-                                                          "signatures.")
+                                                          "signatures.Update")
     sign_by = fields.Char(string='Signed By', help="Name of the person who "
                                                    "signed the document.")
     designation = fields.Char(string='Designation', help="Designation of the "

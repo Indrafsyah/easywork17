@@ -1,0 +1,33 @@
+<odoo>
+    <!-- Purchase Request -->
+    <record id="report_purchase_request_document_custom" model="ir.actions.report">
+        <field name="name">Purchase Request with Signatures</field>
+        <field name="model">purchase.request</field>
+        <field name="report_name">purchase_request.report_purchase_request_document_custom</field>
+        <field name="report_type">qweb-pdf</field>
+    </record>
+
+    <!-- Purchase Order -->
+    <record id="report_purchase_order_document_custom" model="ir.actions.report">
+        <field name="name">Purchase Order with Signatures</field>
+        <field name="model">purchase.order</field>
+        <field name="report_name">purchase.report_purchaseorder_document_custom</field>
+        <field name="report_type">qweb-pdf</field>
+    </record>
+
+    <!-- Picking Operations -->
+    <record id="report_picking_operations_document_custom" model="ir.actions.report">
+        <field name="name">Picking Operations with Signatures</field>
+        <field name="model">stock.picking</field>
+        <field name="report_name">stock.report_picking_operations_document_custom</field>
+        <field name="report_type">qweb-pdf</field>
+    </record>
+
+    <!-- Delivery Slip -->
+    <record id="report_delivery_slip_document_custom" model="ir.actions.report">
+        <field name="name">Delivery Slip with Signatures</field>
+        <field name="model">stock.picking</field>
+        <field name="report_name">stock.report_deliveryslip_document_custom</field>
+        <field name="report_type">qweb-pdf</field>
+    </record>
+</odoo>
